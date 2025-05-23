@@ -8,41 +8,41 @@
 ## Grammar (BNF)
 
 ```bnf
-[prog]           ::= [prog header] [var part] [stat part]
+<font color="blue">[prog]</font>           ::= <font color="blue">[prog header]</font> <font color="blue">[var part]</font> <font color="blue">[stat part]</font>
 
-[prog header]    ::= program id "(" input "," output ")" ";"
+<font color="blue">[prog header]</font>    ::= program id "(" input "," output ")" ";"
 
-[var part]       ::= var [var dec list]
+<font color="blue">[var part]</font>       ::= var <font color="blue">[var dec list]</font>
 
-[var dec list]   ::= [var dec]
-                   | [var dec list] [var dec]
+<font color="blue">[var dec list]</font>   ::= <font color="blue">[var dec]</font>
+                                           | <font color="blue">[var dec list]</font> <font color="blue">[var dec]</font>
 
-[var dec]        ::= [id list] ":" [type] ";"
+<font color="blue">[var dec]</font>        ::= <font color="blue">[id list]</font> ":" <font color="blue">[type]</font> ";"
 
-[id list]        ::= id
-                   | [id list] "," id
+<font color="blue">[id list]</font>        ::= id
+                                           | <font color="blue">[id list]</font> "," id
 
-[type]           ::= integer
-                   | real
-                   | boolean
+<font color="blue">[type]</font>           ::= <font color="red">integer</font>
+                                           | <font color="red">real</font>
+                                           | <font color="red">boolean</font>
 
-[stat part]      ::= begin [stat list] end "."
+<font color="blue">[stat part]</font>      ::= begin <font color="blue">[stat list]</font> end "."
 
-[stat list]      ::= [stat]
-                   | [stat list] ";" [stat]
+<font color="blue">[stat list]</font>      ::= <font color="blue">[stat]</font>
+                                           | <font color="blue">[stat list]</font> ";" <font color="blue">[stat]</font>
 
-[stat]           ::= [assign stat]
+<font color="blue">[stat]</font>           ::= <font color="blue">[assign stat]</font>
 
-[assign stat]    ::= id ":=" [expr]
+<font color="blue">[assign stat]</font>    ::= id ":=" <font color="blue">[expr]</font>
 
-[expr]           ::= [term]
-                   | [expr] "+" [term]
+<font color="blue">[expr]</font>           ::= <font color="blue">[term]</font>
+                                           | <font color="blue">[expr]</font> "+" <font color="blue">[term]</font>
 
-[term]           ::= [factor]
-                   | [term] "*" [factor]
+<font color="blue">[term]</font>           ::= <font color="blue">[factor]</font>
+                                           | <font color="blue">[term]</font> "*" <font color="blue">[factor]</font>
 
-[factor]         ::= "(" [expr] ")"
-                   | [operand]
+<font color="blue">[factor]</font>         ::= "(" <font color="blue">[expr]</font> ")"
+                                           | <font color="blue">[operand]</font>
 
-[operand]        ::= id
-                   | number
+<font color="blue">[operand]</font>        ::= id
+                                           | number
