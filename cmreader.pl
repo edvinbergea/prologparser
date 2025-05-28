@@ -20,6 +20,10 @@ restsent(_, C, [W1 | Ws ]) :- readword(C, W1, C1), restsent(W1, C1, Ws).
 /******************************************************************************/
 
 readword(C, W, _)  :- C = -1, W = C.                    /* added EOF handling */
+readword(58, ':=', C3) :-    
+    get0(C2), C2 =:= 61, !,
+    get0(C3).
+
 readword(C, W, C1) :- single_character( C ), name(W, [C]), get0(C1).
 readword(C, W, C2) :-
    in_word(C, NewC ),
