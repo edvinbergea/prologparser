@@ -1,3 +1,7 @@
+% Edvin Bergeå
+% Ago Ribic
+
+
 /******************************************************************************/
 /* From Programming in Prolog (4th Ed.) Clocksin & Mellish, Springer (1994)   */
 /* Chapter 5, pp 101-103 (DFR (140421) modified for input from a file)        */
@@ -19,6 +23,17 @@ restsent(_, C, [W1 | Ws ]) :- readword(C, W1, C1), restsent(W1, C1, Ws).
 /* and remembering what character came after the word (NB!)                   */
 /******************************************************************************/
 
+restnumber(N, [NewN|Ns], N2) :-
+   in_number(N, NewN),
+   get0(N1),
+   restnumber(N1, Ns, N2).
+
+restnumber(N, [ ], N).
+readword(C, W, C2) :-
+   in_number(C, NewC),
+   get0(C1),
+   restnumber(C1, Cs, C2),
+   name(W, [NewC|Cs]).
 readword(C, W, _)  :- C = -1, W = C.                    /* added EOF handling */
 readword(58, ':=', C3) :-    
     get0(C2), C2 =:= 61, !,
@@ -53,6 +68,7 @@ single_character(59).                  /* ; */
 single_character(58).                  /* : */
 single_character(61).                  /* = */
 single_character(46).                  /* . */
+single_character(45).                  /* - */
 
 /******************************************************************************/
 /* These characters can appear within a word.                                 */
@@ -62,6 +78,7 @@ single_character(46).                  /* . */
 in_word(C, C) :- C>96, C<123.             /* a b ... z */
 in_word(C, L) :- C>64, C<91, L is C+32.   /* A B ... Z */
 in_word(C, C) :- C>47, C<58.              /* 1 2 ... 9 */
+in_number(C, C) :- C>47, C<58.
 
 /******************************************************************************/
 /* These words terminate a sentence                                           */
