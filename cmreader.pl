@@ -1,3 +1,7 @@
+% Edvin Bergeå
+% Ago Ribic
+
+
 /******************************************************************************/
 /* From Programming in Prolog (4th Ed.) Clocksin & Mellish, Springer (1994)   */
 /* Chapter 5, pp 101-103 (DFR (140421) modified for input from a file)        */
