@@ -204,8 +204,8 @@ testfiles/testv.pas end of parse
 
 Testing testfiles/testw.pas
 
-[program,testw,(,input,,,output,),;,var,a,,,b,,,c,:,integer,;,begin,a,:=,b,+,c,2,end,.]
-[256,270,40,257,44,258,41,59,259,270,44,270,44,270,58,260,59,261,270,271,270,43,270,272,262,46]
+[program,testw,(,input,,,output,),;,var,a,,,b,,,c,:,integer,;,begin,a,:=,b,+,c,-,2,end,.]
+[256,270,40,257,44,258,41,59,259,270,44,270,44,270,58,260,59,261,270,271,270,43,270,273,272,262,46]
 Parse Fail!
 testfiles/testw.pas end of parse
 
@@ -239,8 +239,8 @@ testfiles/fun1.pas end of parse
 
 Testing testfiles/fun2.pas
 
-[program,fun2,(,input,,,output,),;,var,a,,,b,,,c,:,integer,;,begin,3a,:=,b,+,c,*,2,end,.]
-[256,270,40,257,44,258,41,59,259,270,44,270,44,270,58,260,59,261,273,271,270,43,270,42,272,262,46]
+[program,fun2,(,input,,,output,),;,var,a,,,b,,,c,:,integer,;,begin,33333,a,:=,b,+,c,*,2,end,.]
+[256,270,40,257,44,258,41,59,259,270,44,270,44,270,58,260,59,261,272,270,271,270,43,270,42,272,262,46]
 Parse Fail!
 testfiles/fun2.pas end of parse
 
